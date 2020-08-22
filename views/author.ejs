@@ -1,0 +1,42 @@
+<% include head %>
+
+</head>
+
+<body>
+
+	<% include navbar %>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-12">
+				<h1><u> Authors of Authors</u></h1>
+      </div>
+      
+				<div class="col-sm-12">
+          <% authorsDummyData.forEach((author)=>{ %>
+            
+            <div class="col-md-3 col-sm-4">
+              <a href="/author/<%= author.authorId%>">
+                <h4> <%= author.firstName %> </h4>
+              </a>
+            </div>
+
+          <% }) %>
+
+        </div>
+
+    </div>
+    
+
+    <form action="/author" method="POST">
+
+      <input type="text" name="authorFirstName" placeholder="First Name">
+      <input type="text" name="authorLastName" placeholder="Last Name">
+      <button> Add Author </button>
+      
+    </form>
+
+	</div>
+</body>
+</html>
